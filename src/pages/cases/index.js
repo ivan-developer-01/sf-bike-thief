@@ -7,26 +7,10 @@ export default class Cases extends Component {
 		super(props);
 
 		this.state = {
-			cases: [
-				{
-					status: "new",
-					licenseNumber: "123456",
-					type: "sport",
-					ownerFullName: "Иванов Иван Иванович",
-					clientId: "ClientId12983245389726345",
-					createdAt: new Date("2021-01-01T00:00:00.000Z"),
-					updatedAt: new Date("2021-01-01T00:00:00.000Z"),
-					color: "black",
-					date: new Date("2021-01-01T00:00:00.000Z"),
-					officer: "3874",
-					description: "Украли велосипед №123",
-					resolution: "Вернули велосипед №123, вор велосипеда Вор Воров наказан.",
-				}
-			]
+			cases: this.props.theftCases
 		}
 	}
 	render() {
-		console.log(this.state.cases)
 		return (
 			<>
 				<Title pageTitle="Сообщения о кражах" />
@@ -56,10 +40,10 @@ export default class Cases extends Component {
 									{/* <td>{item.licenseNumber}</td> */}
 									{/* <td>{item.type}</td> */}
 									<td>{item.ownerFullName}</td>
-									<td>{item.createdAt.toDateString?.()}</td>
-									<td>{item.color}</td>
-									<td>{item.date.toDateString?.()}</td>
-									<td>{item.officer}</td>
+									<td>{item.createdAt?.toLocaleDateString?.()}</td>
+									<td>{item.color || "Не указан"}</td>
+									<td>{item.date?.toLocaleDateString?.()}</td>
+									<td>{item.officer || "Не назначен"}</td>
 									{/* <td>{item.description}</td> */}
 									{/* <td>{item.resolution}</td> */}
 									<td><Link to={`/cases/${item.id}`}>Подробнее</Link></td>

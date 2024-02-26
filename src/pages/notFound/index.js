@@ -18,18 +18,13 @@ import Title from '../../util-components/title';
 // }
 
 export default class NotFound extends Component {
-	onReturnHome = () => {
-		const homeLinkId = this.props.links.find(link => link.home).id
-		this.props.onLinkClick(homeLinkId)
-	}
-
 	render() {
 		let notFoundUrl = document.location.href.replace(document.location.origin, "")
 		return (
 			<>
 				<Title pageTitle="Ошибка 404" />
 				<h1>404</h1>
-				<p>Страница {notFoundUrl} не найдена. <Link to="/" onClick={this.onReturnHome}>Вернитесь на главную.</Link></p>
+				<p>Страница {notFoundUrl} не найдена. <Link to="/">Вернитесь на главную.</Link></p>
 			</>
 		)
 	}

@@ -1,12 +1,10 @@
 import { Component } from "react";
 import Title from "../../util-components/title";
-import RequiredSymbol from "./requiredSymbol";
-import "./style.css"
+import RequiredSymbol from "../../util-components/requiredSymbol";
 
 export default class Login extends Component {
-	constructor(props) {
-		super(props);
-		this.props.clearActiveLinks();
+	constructor() {
+		super();
 
 		this.state = {
 			email: "", incorrectEmail: false,
@@ -31,8 +29,6 @@ export default class Login extends Component {
 		if (this.state.password.length === 0) {
 			this.setState({ incorrectPassword: true })
 		}
-
-		console.log(this.state)
 	}
 
 	render() {

@@ -1,3 +1,12 @@
 a {
 	text-decoration: line-through;
 }
+
+input,
+select {
+	max-width: 500px;
+}
+
+label {
+	color: #4e4e4e;
+}

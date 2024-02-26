@@ -6,15 +6,15 @@ import Footer from "../footer";
 
 export default class Layout extends Component {
 	render() {
-		const { links, onLinkClick } = this.props;
+		const { links } = this.props;
 
 		return (
 			<Container>
-				<Header links={links} onLinkClick={onLinkClick} />
+				<Header links={links} />
 				<main>
 						<Outlet />
 				</main>
-				<Footer links={links} onLinkClick={onLinkClick} />
+				<Footer links={links} />
 			</Container>
 		);
 	}
